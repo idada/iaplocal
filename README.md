@@ -1,4 +1,4 @@
-## Package iaplocal
+# Description
 
 
 `iaplocal` is a Go library that supports Apple Local In-App Purchase
@@ -8,13 +8,13 @@
 - Parse the receipt from binary, extract in-app receipts.
 - Validate the receipts hash with [host GUID](https://developer.apple.com/library/ios/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateLocally.html#//apple_ref/doc/uid/TP40010573-CH1-SW5).
 
-## Installation
+# Installation
 
 ```
 go install github.com/googollee/iaplocal
 ```
 
-## Usage
+# Usage
 
 The simplest possible usage is:
 
@@ -24,12 +24,16 @@ rootCA, _ := x509.ParseCertificate(rootBytes)
 
 receiptB64, _ := ioutil.ReadFile("./receipt_b64")
 receiptBytes, _ := base64.StdEncoding.DecodeString(receiptB64)
-receipt, _ := Parse(rootCA, receiptBytes)
+receipt, _ := iaplocal.Parse(rootCA, receiptBytes)
 
 guid, _ := uuid.FromString(hostGUID)
 receipt.Verify(guid)
 ```
 
-## License
+# Issue
+
+- [ ] Verify PKCS#7 signature error.
+
+# License
 
 See `LICENSE`.
