@@ -26,7 +26,7 @@ rootBytes, _ := ioutil.ReadFile("./AppleComputerRootCertificate.cer")
 rootCA, _ := x509.ParseCertificate(rootBytes)
 
 receiptB64, _ := ioutil.ReadFile("./receipt_b64")
-receiptBytes, _ := base64.StdEncoding.DecodeString(receiptB64)
+receiptBytes, _ := base64.StdEncoding.DecodeString(string(receiptB64))
 receipt, _ := iaplocal.Parse(rootCA, receiptBytes)
 
 guid, _ := uuid.FromString(hostGUID)
