@@ -117,10 +117,7 @@ func verifyCertificates(root *x509.Certificate, certs []*x509.Certificate) bool 
 }
 
 func verifyPKCS(pkcs *pkcs7.PKCS7) bool {
-	// It doesn't work now.
-	// check https://github.com/fullsailor/pkcs7/issues/9
-	// return pkcs.Verify() != nil
-	return true
+	return pkcs.Verify() == nil
 }
 
 type attribute struct {
