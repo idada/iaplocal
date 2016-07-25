@@ -1,3 +1,6 @@
+[![GoDoc](https://godoc.org/github.com/googollee/iaplocal?status.svg)](https://godoc.org/github.com/googollee/iaplocal)
+[![Build Status](https://travis-ci.org/googollee/iaplocal.svg?branch=master)](https://travis-ci.org/googollee/iaplocal)
+
 # Description
 
 
