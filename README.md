@@ -30,10 +30,6 @@ guid, _ := uuid.FromString(hostGUID)
 receipt.Verify(guid)
 ```
 
-# Issue
-
-- [ ] Verify PKCS#7 signature error.
-
 # License
 
 See `LICENSE`.
